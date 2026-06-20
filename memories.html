@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beautiful Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#081120,#0f172a,#16213e);
+    color:#e5e7eb;
+    overflow-x:hidden;
+}
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:rgba(8,17,32,.9);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    z-index:1000;
+    box-shadow:0 2px 20px rgba(0,0,0,.3);
+    border-bottom:1px solid rgba(96,165,250,.15);
+}
+
+.logo{
+    font-family:'Dancing Script',cursive;
+    color:#60a5fa;
+    font-size:2rem;
+}
+
+nav a{
+    text-decoration:none;
+    color:#93c5fd;
+    font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#60a5fa;
+    font-family:'Dancing Script',cursive;
+    text-shadow:0 0 25px rgba(96,165,250,.4);
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.1rem;
+    color:#cbd5e1;
+}
+
+/* GENERAL */
+
+.section{
+    padding:80px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:3rem;
+    color:#60a5fa;
+    margin-bottom:50px;
+    text-shadow:0 0 15px rgba(96,165,250,.3);
+}
+
+/* FEATURED MEMORY */
+.featured{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+    background:#111827;
+    padding:30px;
+    border-radius:25px;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08),
+    0 0 40px rgba(96,165,250,.04);
+}
+
+.featured-text h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.featured-text p{
+    line-height:1.9;
+    color:#d1d5db;
+}
+
+.featured img{
+    width: 100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:40px;
+}
+
+
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+}
+
+.timeline::after{
+    content:"";
+    position:absolute;
+    width:4px;
+    background:#60a5fa;
+    top:0;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.memory{
+    width:50%;
+    padding:20px 40px;
+    position:relative;
+}
+
+.memory.left{
+    left:0;
+}
+
+.memory.right{
+    left:50%;
+}
+
+.memory-card{
+    background:#111827;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08),
+    0 0 40px rgba(96,165,250,.04);
+}
+
+.memory-card h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+}
+
+.memory-card p{
+    color:#d1d5db;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.4s;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 15px rgba(96,165,250,.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:
+    0 0 25px rgba(96,165,250,.2);
+}
+
+/* FAVORITE MEMORY */
+
+.favorite{
+    background:#111827;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
+}
+
+.favorite h2{
+    color:#60a5fa;
+    margin:20px 0;
+}
+
+.favorite p{
+    color:#d1d5db;
+}
+
+.favorite img{
+    width:100%;
+    max-width:800px;
+    height: 300px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+
+
+/* MEMORY WALL */
+
+.wall{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.wall-card{
+    background:#111827;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
+    transition:.3s;
+}
+
+.wall-card:hover{
+    transform:translateY(-8px);
+}
+
+.wall-card h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+}
+
+.wall-card p{
+    color:#d1d5db;
+}
+
+/* CLOSING */
+
+.closing{
+    background:#111827;
+    text-align:center;
+    padding:50px;
+    border-radius:25px;
+    border:1px solid rgba(96,165,250,.15);
+    box-shadow:
+    0 0 20px rgba(96,165,250,.08);
+}
+
+.closing h2{
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.closing p{
+    color:#d1d5db;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    background:#0b1120;
+    color:#cbd5e1;
+    text-align:center;
+    padding:50px;
+    border-top:1px solid rgba(96,165,250,.15);
+}
+
+
+/* ANIMATION */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.7rem;
+}
+
+.featured{
+    grid-template-columns:1fr;
+}
+
+.timeline::after{
+    left:20px;
+}
+
+.memory{
+    width:100%;
+    left:0 !important;
+    padding-left:60px;
+    padding-right:10px;
+}
+.memory-card{
+    cursor:pointer;
+}
+.memory-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(96,165,250,.2);
+}
+.title{
+    font-size:2.2rem;
+}
+
+nav{
+    padding:15px 20px;
+}
+
+}
+.letter-btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#5DE4FF,#2BB8FF);
+    color:#08122D;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(93,228,255,.3);
+}
+
+.letter-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(93,228,255,.5);
+}
+/* IMAGE POPUP */
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:20px;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:75vh;
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+#modalCaption{
+    margin-top:20px;
+    color:white;
+    font-size:1.2rem;
+    text-align:center;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:60px;
+height:60px;
+border:none;
+border-radius:50%;
+background:rgba(255,255,255,.8);
+color:#555;
+font-size:30px;
+cursor:pointer;
+z-index:10000;
+}
+
+#prevBtn{
+left:30px;
+}
+
+#nextBtn{
+right:30px;
+}
+
+.nav-btn:hover{
+background:white;
+}
+
+@media(max-width:768px){
+.nav-btn{
+width:45px;
+height:45px;
+font-size:24px;
+}
+
+
+#prevBtn{
+    left:10px;
+}
+
+#nextBtn{
+    right:10px;
+}
+
+
+}
+
+
+</style>
+</head>
+
+<body>
+     <audio id="bgMusic" autoplay loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<nav>
+    <div class="logo">📸 Memories</div>
+    <a href="index.html">🏠 Home</a>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Beautiful Memories ❤️</h1>
+        <p>Every picture tells a story. Every memory holds a feeling.</p>
+    </div>
+</section>
+
+<!-- FEATURED MEMORY -->
+
+<section class="section fade">
+
+<h2 class="title">⭐ Featured Memory</h2>
+
+<div class="featured">
+
+<img src="image4.jpg" alt="Featured Memory">
+
+<div class="featured-text">
+<h2>A Moment To Remember</h2>
+
+<p>
+Some moments stay with us forever.
+They remind us of happiness, laughter,
+love, and the people who make life special.
+
+This memory is one of those unforgettable moments
+that will always have a special place in our hearts.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="section fade">
+
+<h2 class="title">🕰️ Journey Through Time</h2>
+
+<div class="timeline">
+
+<div class="memory right">
+<div class="memory-card"
+     onclick="openTimelineImage('image2.jpg','13th Feb 2026 ❤️','The beginning of many wonderful memories.')">
+    <h3>13th Feb 2026</h3>
+    <p>The beginning of many wonderful memories.</p>
+</div>
+</div>
+<div class="memory left">
+<div class="memory-card"
+     onclick="openTimelineImage('image3.jpg','22nd Feb 2026 ❤️','A day filled with adventures and laughter.')">
+    <h3>22nd Feb 2026</h3>
+    <p>A day filled with adventures and laughter.</p>
+</div>
+</div>
+<div class="memory right">
+<div class="memory-card"
+     onclick="openTimelineImage('image10.jpg','23rd Feb 2026 ❤️','Special celebrations and unforgettable moments.')">
+    <h3>23rd Feb 2026</h3>
+    <p>Special celebrations and unforgettable moments.</p>
+</div>
+</div>
+<div class="memory left">
+<div class="memory-card"
+     onclick="openTimelineImage('image5.jpg','17th june 2026 ❤️','New milestones and beautiful experiences.')">
+    <h3>17th june 2026</h3>
+    <p>Celebrating your bday filled with memories.</p>
+</div>
+</div>
+<!-- <div class="memory right">
+<div class="memory-card"
+     onclick="openTimelineImage('image6.jpg','Today ❤️','Celebrating a journey filled with memories.')">
+    <h3>Today</h3>
+    <p>Celebrating a journey filled with memories.</p>
+</div>
+</div> -->
+</div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section class="section fade">
+
+<h2 class="title">📷 Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="image2.jpg" alt="Picture Perfect Moment ❤️" class="gallery-img">
+<img src="image3.jpg" alt="Happy Moments ❤️" class="gallery-img">
+<img src="image4.jpg" alt="Special Day ❤️" class="gallery-img">
+<img src="image5.jpg" alt="Unforgettable Memory ❤️" class="gallery-img">
+<img src="image6.jpg" alt="Captured Happiness ❤️" class="gallery-img">
+<img src="image7.jpg" alt="Memories Beyond Time ❤️" class="gallery-img">
+<img src="image8.jpg" alt="Moments That Matter ❤️" class="gallery-img">
+<!-- <img src="image9.jpg" alt="Endless Smiles ❤️" class="gallery-img"> -->
+
+</div>
+
+</section>
+
+<!-- FAVORITE MEMORY -->
+
+<section class="section fade">
+
+<h2 class="title">❤️ Favorite Memory</h2>
+
+<div class="favorite">
+
+<img src="image3.jpg" alt="Favorite Memory">
+
+<h2>A Memory We Cherish</h2>
+
+<p>
+Among all the moments we've shared,
+this one remains especially meaningful.
+
+A reminder of joy, togetherness,
+and memories that time can never erase.
+</p>
+
+</div>
+
+</section>
+
+<!-- MEMORY WALL -->
+
+<section class="section fade">
+
+<h2 class="title">✨ Memory Wall</h2>
+
+<div class="wall">
+
+<div class="wall-card">
+<h3>❤️</h3>
+<p>The day we laughed endlessly.</p>
+</div>
+
+<div class="wall-card">
+<h3>📸</h3>
+<p>A photo that never gets old.</p>
+</div>
+
+<div class="wall-card">
+<h3>🌟</h3>
+<p>A memory that still makes us smile.</p>
+</div>
+
+<div class="wall-card">
+<h3>🎉</h3>
+<p>A celebration we'll never forget.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CLOSING -->
+
+<section class="section fade">
+
+<div class="closing">
+
+<h2>Every Memory Tells A Story ❤️</h2>
+
+<p>
+The best moments in life become memories.
+The best memories become treasures.
+And the best treasures stay with us forever.
+</p>
+
+</div>
+<div style="text-align:center; margin-top:40px;">
+    <button class="letter-btn" onclick="location.href='wishes.html'">
+        💌 Read The Letter
+    </button>
+</div>
+</section>
+
+<footer>
+
+<h2>📸 Thank You For The Memories ❤️</h2>
+
+<p>
+The story continues...
+and the best memories are yet to come.
+</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el => {
+observer.observe(el);
+});
+
+</script>
+<script>
+window.addEventListener("load", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.volume = 2;
+
+    document.body.addEventListener("click", () => {
+        music.play();
+    }, { once:true });
+
+});
+</script>
+<script>
+
+document.addEventListener("click", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.play();
+
+}, { once: true });
+
+</script>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if(savedTime){
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+music.volume = 2;
+
+</script>
+
+
+<!-- IMAGE POPUP -->
+<div id="imageModal" class="modal">
+
+
+<span class="close">&times;</span>
+
+<button id="prevBtn" class="nav-btn">&#10094;</button>
+
+<img id="modalImg">
+
+<button id="nextBtn" class="nav-btn">&#10095;</button>
+
+<div id="modalCaption"></div>
+
+
+</div>
+<script>
+
+function openTimelineImage(imgSrc,title,text){
+
+    modal.style.display = "flex";
+
+    modalImg.src = imgSrc;
+
+    caption.innerHTML =
+    "<h2>" + title + "</h2><br>" + text;
+
+}
+
+</script>
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const caption = document.getElementById("modalCaption");
+const closeBtn = document.querySelector(".close");
+
+const images = document.querySelectorAll(".gallery-img");
+
+let currentIndex = 0;
+
+function showImage(index){
+
+
+currentIndex = index;
+
+modal.style.display = "flex";
+modalImg.src = images[index].src;
+caption.innerText = images[index].alt;
+
+
+}
+
+images.forEach((img,index)=>{
+
+
+img.addEventListener("click",()=>{
+
+    showImage(index);
+
+});
+
+
+});
+
+document.getElementById("nextBtn").onclick = ()=>{
+
+
+currentIndex++;
+
+if(currentIndex >= images.length){
+    currentIndex = 0;
+}
+
+showImage(currentIndex);
+
+
+};
+
+document.getElementById("prevBtn").onclick = ()=>{
+
+
+currentIndex--;
+
+if(currentIndex < 0){
+    currentIndex = images.length - 1;
+}
+
+showImage(currentIndex);
+
+
+};
+
+closeBtn.onclick = ()=>{
+modal.style.display = "none";
+};
+
+modal.onclick = (e)=>{
+if(e.target === modal){
+modal.style.display = "none";
+}
+};
+</script>
+
+</body>
+</html>

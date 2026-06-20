@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#050B1F,#0B1635,#11224D);
+min-height:100vh;
+color:#EAF2FF;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:rgba(8,18,45,.85);
+backdrop-filter:blur(15px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+box-shadow:0 2px 20px rgba(0,255,255,.1);
+z-index:1000;
+border-bottom:1px solid rgba(0,255,255,.15);
+}
+
+.logo{
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#5DE4FF;
+text-shadow:0 0 15px rgba(93,228,255,.5);
+}
+
+nav a{
+text-decoration:none;
+color:#C8D9FF;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#5DE4FF;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+color:#5DE4FF;
+text-shadow:0 0 20px rgba(93,228,255,.4);
+}
+
+.hero p{
+margin-top:10px;
+font-size:1.1rem;
+color:#B8C8E8;
+}
+
+/* LETTER */
+
+.container{
+padding:30px 10%;
+}
+
+.letter{
+background:rgba(15,28,60,.9);
+max-width:900px;
+margin:auto;
+padding:50px;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+border:1px solid rgba(93,228,255,.15);
+}
+
+.letter h2{
+color:#5DE4FF;
+margin-bottom:25px;
+}
+
+#letterText{
+line-height:2;
+font-size:1.1rem;
+white-space:pre-line;
+min-height:400px;
+color:#EAF2FF;
+}
+
+.cursor{
+display:inline-block;
+color:#5DE4FF;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
+
+.signature{
+margin-top:40px;
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:#5DE4FF;
+opacity:0;
+transition:1s;
+}
+
+.signature.show{
+opacity:1;
+}
+
+.quote{
+margin-top:25px;
+text-align:center;
+font-style:italic;
+color:#9DB0D7;
+opacity:0;
+transition:1s;
+}
+
+.quote.show{
+opacity:1;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+background:linear-gradient(135deg,#08122D,#10204A);
+color:#EAF2FF;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(93,228,255,.15);
+}
+
+footer h2{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+margin-bottom:10px;
+color:#5DE4FF;
+}
+footer{
+margin-top:60px;
+background:linear-gradient(135deg,#08122D,#10204A);
+color:#EAF2FF;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(93,228,255,.15);
+}
+
+footer h2{
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+margin-bottom:10px;
+color:#5DE4FF;
+}
+.freelance-footer{
+    width:100%;
+    margin-top:25px;
+    padding:15px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.freelance-footer span{
+    color:#D7E5FF;
+    font-size:.95rem;
+}
+
+.mini-btn{
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.email{
+    background:#5DE4FF;
+    color:#08122D;
+}
+
+.mini-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.letter{
+padding:30px;
+}
+
+#letterText{
+font-size:1rem;
+}
+
+}
+/* #musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 18px;
+border:none;
+border-radius:50px;
+background:#ff4f87;
+color:white;
+cursor:pointer;
+z-index:999;
+} */
+#skipBtn{
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#5DE4FF,#2BB8FF);
+color:#08122D;
+font-weight:600;
+cursor:pointer;
+margin-bottom:20px;
+font-size:1rem;
+transition:.3s;
+box-shadow:0 0 20px rgba(93,228,255,.3);
+}
+
+#skipBtn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(93,228,255,.5);
+}
+</style>
+</head>
+
+<body>
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+<nav>
+<div class="logo">💌 Letter</div>
+<a href="index.html">🏠 Home</a>
+</nav>
+
+<section class="hero">
+
+<h1>A Letter From The Heart ❤️</h1>
+
+<p>
+Some words are best written, remembered, and cherished forever.
+</p>
+
+</section>
+
+<section class="container">
+
+<div class="letter">
+
+<h2>Dear Special One,</h2>
+<button id="skipBtn">⏩ Skip Animation</button>
+
+<div id="letterText"></div>
+
+<div id="letterText"></div>
+
+<div class="signature" id="signature">
+With Love ❤️
+</div>
+
+<div class="quote" id="quote">
+"Sometimes the simplest words carry the deepest meaning."
+</div>
+
+</div>
+
+
+</section>
+
+<div class="freelance-footer">
+
+    <span>🚀 Need a custom website like this?</span>
+
+<div class="contact-buttons"> 
+    <a href="https://wa.me/918522833095?text=Hello%20Manoj,%20I%20would%20like%20to%20order%20a%20custom%20website.%20Can%20you%20share%20details%20and%20pricing?" target="_blank" class="mini-btn whatsapp"> 💬 WhatsApp </a> 
+    <a href="mailto:polipillimanojkumar123@gmail.com?subject=Website%20Order%20Inquiry&body=Hello%20Manoj,%0A%0AI%20would%20like%20to%20order%20a%20custom%20website.%0A%0APlease%20share:%0A-%20Pricing%0A-%20Delivery%20Time%0A-%20Available%20Designs%0A%0AThank%20You." class="mini-btn email"> 📧 Email </a> </div>
+
+<script>
+
+const letter = `🎉 **Happy Birthday to the brother I never expected to find in college!** 🎂✨
+
+What started as a simple friendship 🤝 turned into a bond that feels like family ❤️.
+
+When we first met in college 🎓, I never imagined that a normal friendship would become such a special part of my life. From random conversations 🗣️ to endless laughs 😂, from small moments to unforgettable memories 📸, every moment with you became something worth remembering ✨.
+
+Through laughter 😂, memories 📸, challenges 💪, and countless conversations, you've become more than a friend — you've become my brother by heart 🫂.
+
+Thank you for always being there 🤍, for supporting me, encouraging me, and making college days more special 🏫✨. The time we spent together with our friends, the fun moments, and all the memories we created will always have a special place in my heart ❤️.
+
+Some people enter our lives as friends 🤝 and slowly become family ❤️. Meeting you in college 🎓 was truly one of the best things that happened to me 🌟.
+
+A true bond is not about how long we know someone, but about the memories, trust, and happiness we share together 💫. And I'm grateful for every moment we've shared 🤍.
+
+Happy Birthday to my brother by choice 🥳, my partner in memories 📸, and one of the most important people in my life ❤️.
+
+Wishing you endless happiness 😊, success 🚀, good health 💙, and a year full of blessings 🙏✨.
+
+May this new year of your life bring you more achievements 🏆, beautiful moments 🌟, and countless reasons to smile 😄.
+
+🎂 **Have an amazing birthday, brother! Always stay the same ❤️🥳**
+
+
+`;
+
+const letterText = document.getElementById("letterText");
+const skipBtn = document.getElementById("skipBtn");
+const signature = document.getElementById("signature");
+const quote = document.getElementById("quote");
+
+let i = 0;
+let typingFinished = false;
+
+function finishLetter(){
+    letterText.innerHTML = letter;
+    signature.classList.add("show");
+    quote.classList.add("show");
+    skipBtn.style.display = "none";
+    typingFinished = true;
+}
+
+function typeWriter(){
+
+    if(typingFinished) return;
+
+    if(i < letter.length){
+
+        letterText.innerHTML =
+        letter.substring(0,i+1) +
+        '<span class="cursor">|</span>';
+
+        i++;
+
+        setTimeout(typeWriter,35);
+
+    }else{
+
+        finishLetter();
+
+    }
+}
+
+skipBtn.addEventListener("click", () => {
+    finishLetter();
+});
+
+window.onload = () => {
+    setTimeout(typeWriter,800);
+};
+</script>
+<!-- <script>
+
+document.addEventListener("click", () => {
+
+    const music = document.getElementById("bgMusic");
+
+    music.play();
+
+}, { once: true });
+
+</script> -->
+
+ <script>
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    const savedTime = localStorage.getItem("musicTime");
+    if(savedTime){
+        music.currentTime = parseFloat(savedTime);
+    }
+});
+
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+music.volume = 2;
+
+</script>
+<!--<script>
+
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+btn.onclick = () => {
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML = "🔊 Playing";
+    }else{
+        music.pause();
+        btn.innerHTML = "🎵 Play Music";
+    }
+
+};
+
+</script> -->
+<!-- <script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+// restore time
+music.addEventListener("loadedmetadata", () => {
+    const time = localStorage.getItem("musicTime");
+    if(time){
+        music.currentTime = parseFloat(time);
+    }
+});
+
+// save time continuously
+setInterval(() => {
+    if(!music.paused){
+        localStorage.setItem("musicTime", music.currentTime);
+    }
+}, 500);
+
+// first user interaction unlocks audio
+document.addEventListener("click", () => {
+    music.play().catch(()=>{});
+}, { once:true });
+
+// button toggle
+btn.addEventListener("click", () => {
+    if(music.paused){
+        music.play();
+        btn.innerText = "🔊 Playing";
+        localStorage.setItem("musicPaused","false");
+    }else{
+        music.pause();
+        btn.innerText = "🎵 Play Music";
+        localStorage.setItem("musicPaused","true");
+    }
+});
+
+// restore pause state
+window.addEventListener("load", () => {
+    if(localStorage.getItem("musicPaused") === "true"){
+        music.pause();
+        btn.innerText = "🎵 Play Music";
+    }
+});
+
+music.volume = 0.3; -->
+</script>
+</body>
+</html>
